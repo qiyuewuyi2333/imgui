@@ -19,12 +19,11 @@ target_include_directories(ImGui PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # 如果是 Windows 平台，设置导出宏
 if (WIN32)
-    target_compile_definitions(ImGui PRIVATE IMGUI_API=__declspec(dllexport))
+    target_compile_definitions(ImGui PRIVATE IMGUI_API=__declspec\(dllexport\))
 endif()
 
 # 查找 Vulkan 和 GLFW 库
 find_package(Vulkan REQUIRED)
-find_package(glfw3 REQUIRED)
 
 # 链接 GLFW 库
 target_link_libraries(ImGui PUBLIC glfw)
